@@ -8,3 +8,7 @@ Thumbs.db
 .mimosa/
 storage/
 
+
+.agent/
+.agents/
+
