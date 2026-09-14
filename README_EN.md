@@ -1,11 +1,11 @@
-﻿# NocoBase Real-time Online Counter & Session Management Plugin (`@nocobase/plugin-online-count`)
+# NocoBase Real-time Online Counter & Session Management Plugin (`@nocobase/plugin-online-count`)
 
 <p align="left">
   <b>English</b> | <a href="./README.md">简体中文</a>
 </p>
 
 [![Views](https://komarev.com/ghpvc/?username=nocobase-plugin-online-count&color=007ec6&style=flat-square&label=Views)](https://github.com/STlxx-lin/nocobase-plugin-online-count)
-[![Version](https://img.shields.io/badge/version-v0.2.15-blue.svg)](https://github.com/STlxx-lin/nocobase-plugin-online-count/releases)
+[![Version](https://img.shields.io/badge/version-v0.2.16-blue.svg)](https://github.com/STlxx-lin/nocobase-plugin-online-count/releases)
 [![NocoBase Version](https://img.shields.io/badge/NocoBase-2.x-brightgreen.svg)](https://www.nocobase.com)
 [![License](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](LICENSE)
 
@@ -49,7 +49,7 @@ yarn nocobase pm enable @nocobase/plugin-online-count
 ### Method 2: Manual Installation from Release Archive
 
 ```bash
-yarn nocobase pm add /path/to/@nocobase-plugin-online-count-0.2.15.tgz
+yarn nocobase pm add /path/to/@nocobase-plugin-online-count-0.2.16.tgz
 yarn nocobase pm enable @nocobase/plugin-online-count
 ```
 

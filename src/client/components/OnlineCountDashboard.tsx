@@ -11,6 +11,7 @@ import {
   Switch,
   message,
   Typography,
+  theme,
 } from 'antd';
 import {
   ReloadOutlined,
@@ -35,6 +36,7 @@ import { BroadcastReadersDrawer } from './modals/BroadcastReadersDrawer';
 const { Text } = Typography;
 
 export const OnlineCountDashboard: React.FC<{ api: any }> = ({ api }) => {
+  const { token } = theme.useToken();
   const [activeTab, setActiveTab] = useState('sessions');
   const [stats, setStats] = useState({
     totalOnline: 0,
@@ -555,11 +557,11 @@ export const OnlineCountDashboard: React.FC<{ api: any }> = ({ api }) => {
   }, [autoRefresh, activeTab, page, pageSize, keyword, deviceFilter, broadcastPage, broadcastPageSize, broadcastStatusFilter]);
 
   return (
-    <div style={{ padding: '20px 24px', background: '#f0f2f5', minHeight: '100vh' }}>
+    <div style={{ padding: '20px 24px', background: token.colorBgLayout, minHeight: '100%' }}>
       {/* 顶部标题栏 */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 20 }}>
         <div>
-          <h2 style={{ margin: 0, fontWeight: 700, fontSize: 22, color: '#1f1f1f' }}>
+          <h2 style={{ margin: 0, fontWeight: 700, fontSize: 22, color: token.colorText }}>
             👥 在线人数与会话管控中心
           </h2>
           <Text type="secondary" style={{ fontSize: 13 }}>

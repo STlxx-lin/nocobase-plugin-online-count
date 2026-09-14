@@ -11,6 +11,7 @@ import {
   Avatar,
   Badge,
   Popconfirm,
+  theme,
 } from 'antd';
 import {
   UserOutlined,
@@ -59,6 +60,7 @@ export const SessionsTab: React.FC<SessionsTabProps> = ({
   onKickout,
   onDirectMessage,
 }) => {
+  const { token } = theme.useToken();
   const [localKw, setLocalKw] = React.useState(keyword);
   const [localDev, setLocalDev] = React.useState(deviceFilter);
 
@@ -190,9 +192,9 @@ export const SessionsTab: React.FC<SessionsTabProps> = ({
                 alignItems: 'center',
                 gap: 5,
                 maxWidth: '100%',
-                background: '#f0f5ff',
-                color: '#1677ff',
-                border: '1px solid #adc6ff',
+                background: token.colorFillTertiary,
+                color: token.colorPrimary,
+                border: `1px solid ${token.colorBorderSecondary}`,
                 padding: '2px 8px',
                 borderRadius: 4,
                 fontSize: 12,
@@ -201,12 +203,12 @@ export const SessionsTab: React.FC<SessionsTabProps> = ({
                 transition: 'all 0.2s',
               }}
               onMouseEnter={(e) => {
-                e.currentTarget.style.background = '#d6e4ff';
-                e.currentTarget.style.borderColor = '#85a5ff';
+                e.currentTarget.style.background = token.colorFillSecondary;
+                e.currentTarget.style.borderColor = token.colorPrimaryHover;
               }}
               onMouseLeave={(e) => {
-                e.currentTarget.style.background = '#f0f5ff';
-                e.currentTarget.style.borderColor = '#adc6ff';
+                e.currentTarget.style.background = token.colorFillTertiary;
+                e.currentTarget.style.borderColor = token.colorBorderSecondary;
               }}
             >
               <span
@@ -314,7 +316,8 @@ export const SessionsTab: React.FC<SessionsTabProps> = ({
           justifyContent: 'space-between',
           alignItems: 'center',
           marginBottom: 16,
-          background: '#fafafa',
+          background: token.colorFillAlter,
+          border: `1px solid ${token.colorBorderSecondary}`,
           padding: '10px 14px',
           borderRadius: 6,
         }}

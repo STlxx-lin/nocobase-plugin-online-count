@@ -9,6 +9,7 @@ import {
   Typography,
   Badge,
   Popconfirm,
+  theme,
 } from 'antd';
 import {
   NotificationOutlined,
@@ -49,6 +50,7 @@ export const BroadcastsTab: React.FC<BroadcastsTabProps> = ({
   onRevoke,
   onViewReaders,
 }) => {
+  const { token } = theme.useToken();
   const [localStatus, setLocalStatus] = React.useState(statusFilter);
 
   React.useEffect(() => {
@@ -225,7 +227,8 @@ export const BroadcastsTab: React.FC<BroadcastsTabProps> = ({
           justifyContent: 'space-between',
           alignItems: 'center',
           marginBottom: 16,
-          background: '#fafafa',
+          background: token.colorFillAlter,
+          border: `1px solid ${token.colorBorderSecondary}`,
           padding: '10px 14px',
           borderRadius: 6,
         }}

@@ -23,7 +23,19 @@ export class PluginOnlineCountClientV2 extends Plugin {
     const manager = this.app.pluginSettingsManager as any;
     if (!manager) return;
 
-    const title = this.app.i18n?.t ? this.app.i18n.t('Online Users & Sessions') : '在线用户与会话';
+    let title = '在线用户与会话';
+    try {
+      const i18n = this.app?.i18n;
+      const res = i18n?.t ? i18n.t('Online Users & Sessions', { ns: ['@nocobase/plugin-online-count', 'client'] }) : null;
+      if (res && res !== 'Online Users & Sessions') {
+        title = res;
+      } else {
+        const lang = (i18n?.language || (typeof window !== 'undefined' ? localStorage.getItem('NOCOBASE_LOCALE') : '') || '').toLowerCase();
+        title = (!lang || lang.startsWith('zh')) ? '在线用户与会话' : (res || 'Online Users & Sessions');
+      }
+    } catch (e) {
+      title = '在线用户与会话';
+    }
     const icon = 'TeamOutlined';
     const menuKey = 'online-count';
     const pageName = `${menuKey}.index`;

@@ -8,6 +8,7 @@ import {
   Select,
   Tooltip,
   Avatar,
+  theme,
 } from 'antd';
 import {
   UserOutlined,
@@ -40,6 +41,7 @@ export const AuditLogsTab: React.FC<AuditLogsTabProps> = ({
   onSearchChange,
   onRefresh,
 }) => {
+  const { token } = theme.useToken();
   const [localUser, setLocalUser] = React.useState(username);
   const [localReason, setLocalReason] = React.useState(reasonFilter);
 
@@ -168,7 +170,8 @@ export const AuditLogsTab: React.FC<AuditLogsTabProps> = ({
           justifyContent: 'space-between',
           alignItems: 'center',
           marginBottom: 16,
-          background: '#fafafa',
+          background: token.colorFillAlter,
+          border: `1px solid ${token.colorBorderSecondary}`,
           padding: '10px 14px',
           borderRadius: 6,
         }}

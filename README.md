@@ -5,7 +5,7 @@
 </p>
 
 [![Views](https://komarev.com/ghpvc/?username=nocobase-plugin-online-count&color=007ec6&style=flat-square&label=Views)](https://github.com/STlxx-lin/nocobase-plugin-online-count)
-[![Version](https://img.shields.io/badge/version-v0.2.15-blue.svg)](https://github.com/STlxx-lin/nocobase-plugin-online-count/releases)
+[![Version](https://img.shields.io/badge/version-v0.2.16-blue.svg)](https://github.com/STlxx-lin/nocobase-plugin-online-count/releases)
 [![NocoBase Version](https://img.shields.io/badge/NocoBase-2.x-brightgreen.svg)](https://www.nocobase.com)
 [![License](https://img.shields.io/badge/license-AGPL--3.0-blue.svg)](LICENSE)
 
