@@ -134,6 +134,14 @@ export class PluginOnlineCountServer extends Plugin {
     await this.sessionControlService.loadActiveKicksFromDb();
 
     await this.trackerService.init();
+
+    // 监听应用停止事件，注销定时任务防止进程悬挂
+    this.app.on('beforeStop', async () => {
+      if (this.trackerService) {
+        this.trackerService.destroy();
+      }
+    });
+
     this.app.logger.info('[OnlineCountPlugin] Online Count & Session Management loaded.');
   }
 
